@@ -4,9 +4,13 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
+      "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
-      "@services/*": ["services/*"],
+      "@navigation/*": ["navigation/*"],
       "@screens/*": ["screens/*"],
+      "@services/*": ["services/*"],
+      "@shared/*": ["shared/*"],
+      "@types/*": ["types/*"],
       "@utils/*": ["utils/*"]
     }
   }
