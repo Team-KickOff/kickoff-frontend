@@ -11,7 +11,8 @@
       "@services/*": ["services/*"],
       "@shared/*": ["shared/*"],
       "@types/*": ["types/*"],
-      "@utils/*": ["utils/*"]
+      "@utils/*": ["utils/*"],
+      "@store/*": ["store/*"]
     }
   }
 }
