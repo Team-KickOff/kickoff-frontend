@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { ApiService } from '@services/apis/api-base';
 import { useLoadingActions } from '@store/loadingStore';
 
-function useFetch<IRes, IDependency>(option: {
+function useFetch<IRes>(option: {
   body?: any;
   url: string;
-  dependency?: IDependency;
+  dependency?: any[];
   method: 'get' | 'post' | 'delete' | 'put';
 }): { data: IRes | null; refetch: () => void } {
   const [data, setData] = useState<IRes | null>(null);
@@ -29,9 +29,12 @@ function useFetch<IRes, IDependency>(option: {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [option.dependency]);
+  useEffect(
+    () => {
+      fetchData();
+    },
+    Array.isArray(option.dependency) ? option.dependency : [],
+  );
 
   return { data, refetch: fetchData };
 }
