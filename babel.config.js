@@ -26,6 +26,7 @@ module.exports = {
           '@shared': './src/shared',
           '@types': './src/types',
           '@utils': './src/utils',
+          '@config': './src/config',
         },
       },
     ],
