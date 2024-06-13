@@ -3,11 +3,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const getData = async (key: string) => {
   try {
     const value = await AsyncStorage.getItem(key);
-    return value !== null ? JSON.parse(value) : null;
+
+    return value !== null ? JSON.parse(value) : false;
   } catch (e: any) {
     // error reading value
     if (e.message.includes('Unexpected character')) {
-      return e.message.split(':')[2];
+      return e.message.split(':')[2] || false;
     }
     return false;
   }
